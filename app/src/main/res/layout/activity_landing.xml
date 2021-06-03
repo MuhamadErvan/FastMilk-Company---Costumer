@@ -1,74 +1,85 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/activity_landing"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/white"
     android:padding="30dp"
-
     tools:context=".activity_landing">
 
     <ImageView
+        android:id="@+id/logo2"
         android:layout_width="150dp"
         android:layout_height="150dp"
-        android:id="@+id/logo2"
+        android:layout_centerHorizontal="true"
         android:src="@drawable/logo_fastmilk"
-        android:layout_centerVertical="true"
-        android:layout_alignParentTop="true"
-        android:layout_centerInParent="true"/>
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.074" />
+
     <TextView
         android:id="@+id/text1"
-        android:layout_below="@+id/logo2"
-        android:paddingTop="120dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:paddingTop="120dp"
         android:text="SELAMAT DATANG"
         android:textColor="@color/colorPrimary"
         android:textSize="20dp"
-        android:layout_centerHorizontal="true"/>
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/logo2" />
 
     <TextView
         android:id="@+id/text2"
-        android:layout_below="@+id/text1"
-        android:paddingTop="10dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:paddingTop="10dp"
         android:text="Nikmati kegiatan anda dengan produk-produk"
         android:textColor="#C4C4C4"
         android:textSize="14dp"
-        android:layout_centerHorizontal="true"/>
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/text1" />
 
     <TextView
         android:id="@+id/text3"
-        android:layout_below="@+id/text2"
-        android:paddingTop="2dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:paddingTop="2dp"
         android:text="unggulan dari kami"
         android:textColor="#C4C4C4"
         android:textSize="14dp"
-        android:layout_centerHorizontal="true"/>
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/text2" />
 
     <Button
         android:id="@+id/button1"
-        android:layout_below="@+id/text3"
-        android:layout_marginTop="25dp"
         android:layout_width="250dp"
         android:layout_height="50dp"
+        android:layout_marginTop="25dp"
+        android:background="@drawable/rounded_button"
         android:text="MASUK"
         android:textColor="#FFFF"
-        android:background="@drawable/rounded_button"
-        android:layout_centerHorizontal="true"/>
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/text3" />
 
     <Button
         android:id="@+id/button2"
-        android:layout_below="@+id/button1"
-        android:layout_marginTop="10dp"
         android:layout_width="250dp"
         android:layout_height="50dp"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/border"
         android:text="DAFTAR"
         android:textColor="@color/colorPrimary"
-        android:background="@drawable/border"
-        android:layout_centerHorizontal="true"/>
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/button1" />
 
-</RelativeLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
