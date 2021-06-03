@@ -2,6 +2,9 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.fastmilk_costumer">
 
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -11,7 +14,7 @@
         android:theme="@style/AppTheme">
         <activity android:name=".SignInActivity" />
         <activity android:name=".activity_select_location" />
-        <activity android:name=".ForgotPasswordSuccessActivity"></activity>
+        <activity android:name=".ForgotPasswordSuccessActivity" />
         <activity android:name=".ForgotPasswordActivity" />
         <activity android:name=".activity_landing" />
         <activity android:name=".MainActivity">

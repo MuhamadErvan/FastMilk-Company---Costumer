@@ -101,14 +101,14 @@
         android:id="@+id/txt_forgot_password"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="248dp"
         android:layout_marginTop="2dp"
+        android:layout_marginRight="20dp"
         android:fontFamily="@font/nunitoregular"
         android:text="Forgot Password ?"
         android:textSize="16sp"
         android:textColor="@color/black"
         android:textColorLink="@color/orangeMain"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/input_alamat" />
 
     <Button
