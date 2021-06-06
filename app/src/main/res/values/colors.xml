@@ -6,4 +6,5 @@
     <color name="white">#FFFFFFFF</color>
     <color name="black">#FF000000</color>
     <color name="orangeMain">#FE931D</color>
+    <color name="stroke">#DADADA</color>
 </resources>
