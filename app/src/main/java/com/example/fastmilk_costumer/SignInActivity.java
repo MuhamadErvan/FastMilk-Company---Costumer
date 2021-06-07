@@ -7,6 +7,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -15,6 +16,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
+import com.google.android.material.snackbar.Snackbar;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DatabaseReference;
@@ -30,6 +32,7 @@ public class SignInActivity extends AppCompatActivity {
     private Button btnSignIn;
     private EditText txtEmail;
     private EditText txtPassword;
+    private ProgressBar loader;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -39,6 +42,7 @@ public class SignInActivity extends AppCompatActivity {
         mAuth = FirebaseAuth.getInstance();
         database = FirebaseDatabase.getInstance();
         reference = database.getReference();
+        loader = findViewById(R.id.loader);
 
         txtEmail = findViewById(R.id.input_email);
         txtPassword = findViewById(R.id.input_password);
@@ -57,12 +61,12 @@ public class SignInActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 if(txtEmail.getText().toString().trim().isEmpty()){
-                    Toast.makeText(getApplicationContext(), "Harap isi Email dengan benar!", Toast.LENGTH_LONG).show();
+                    Snackbar.make(view, "Harap Isi Email dengan Benar !", Snackbar.LENGTH_LONG).show();
                     return;
                 }
 
                 if(txtPassword.getText().toString().trim().isEmpty()) {
-                    Toast.makeText(getApplicationContext(), "Harap isi Password dengan benar!", Toast.LENGTH_LONG).show();
+                    Snackbar.make(view, "Harap Isi Password dengan Benar !", Snackbar.LENGTH_LONG).show();
                     return;
                 }
                 SignIn();
@@ -85,6 +89,7 @@ public class SignInActivity extends AppCompatActivity {
         String email = txtEmail.getText().toString();
         String password = txtPassword.getText().toString();
 
+        loader.setVisibility(View.VISIBLE);
         mAuth.signInWithEmailAndPassword(email, password).addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
             @Override
             public void onComplete(@NonNull Task<AuthResult> task) {
@@ -93,6 +98,7 @@ public class SignInActivity extends AppCompatActivity {
                 if(task.isSuccessful()){
                     onAuthSuccess();
                 } else {
+                    loader.setVisibility(View.GONE);
                     Toast.makeText(getApplicationContext(), "Login Gagal", Toast.LENGTH_LONG).show();
                 }
             }
@@ -100,6 +106,7 @@ public class SignInActivity extends AppCompatActivity {
     }
 
     private void onAuthSuccess(){
+        loader.setVisibility(View.GONE);
         Toast.makeText(getApplicationContext(), "Login Berhasil", Toast.LENGTH_LONG).show();
     }
 

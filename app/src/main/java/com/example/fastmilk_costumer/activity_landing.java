@@ -9,6 +9,7 @@ import android.widget.Button;
 
 public class activity_landing extends AppCompatActivity {
     private Button btnMasuk;
+    private Button btnDaftarBaru;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -20,6 +21,15 @@ public class activity_landing extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 startActivity(new Intent(getApplicationContext(), SignInActivity.class));
+                finish();
+            }
+        });
+
+        btnDaftarBaru = findViewById(R.id.button2);
+        btnDaftarBaru.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(getApplicationContext(), SignUpActivity.class));
                 finish();
             }
         });
