@@ -16,18 +16,21 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.fastmilk_costumer.entity.Pelanggan;
 import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
 import com.google.android.material.snackbar.Snackbar;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
-import com.google.firebase.database.DatabaseReference;
-import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.firestore.CollectionReference;
+import com.google.firebase.firestore.DocumentReference;
+import com.google.firebase.firestore.FirebaseFirestore;
 
 public class SignUpActivity extends AppCompatActivity {
     private static final String TAG = "SignUpActivity";
     private FirebaseAuth mAuth;
-    private DatabaseReference reference;
+    private FirebaseFirestore database;
+    private CollectionReference reference;
     private EditText txtEmail;
     private EditText txtNama;
     private EditText txtNotelp;
@@ -41,8 +44,9 @@ public class SignUpActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sign_up);
 
-        reference = FirebaseDatabase.getInstance().getReference();
         mAuth = FirebaseAuth.getInstance();
+        database = FirebaseFirestore.getInstance();
+        reference = database.collection("Pelanggan");
 
         txtEmail = findViewById(R.id.input_email);
         txtNama = findViewById(R.id.input_nama);
@@ -107,7 +111,7 @@ public class SignUpActivity extends AppCompatActivity {
 
                 if(task.isSuccessful()){
                     loader.setVisibility(View.GONE);
-                    onAuthSuccess();
+                    onAuthSuccess(task.getResult().getUser());
                 } else {
                     Toast.makeText(getApplicationContext(), "Daftar Gagal :(", Toast.LENGTH_LONG);
                 }
@@ -131,18 +135,24 @@ public class SignUpActivity extends AppCompatActivity {
         return result;
     }
 
-    private void onAuthSuccess() {
+    private void onAuthSuccess(FirebaseUser user) {
         String nama_lengkap = txtNama.getText().toString();
         String no_telp = txtNotelp.getText().toString();
         String alamat = txtAlamat.getText().toString();
 
-//        createNewCustomer(user.getUid(), user.getEmail() ,nama_lengkap, no_telp, alamat);
-
-        Toast.makeText(getApplicationContext(), "Daftar baru berhasil !", Toast.LENGTH_SHORT).show();
+        createNewCustomer(user.getUid(), user.getEmail() ,nama_lengkap, no_telp, alamat);
     }
 
-    private void createNewCustomer(String idPel, String email, String nama, String notelp, String alamat) {
-        Pelanggan pelanggan = new Pelanggan(email, nama, notelp, alamat);
-        reference.child("pelanggan").child(idPel).setValue(pelanggan);
+    private void createNewCustomer(String idPel, String Email_pelanggan, String Nama_pelanggan, String No_Telepon, String Alamat) {
+        Pelanggan pelanggan = new Pelanggan(idPel ,Email_pelanggan, Nama_pelanggan, No_Telepon, Alamat);
+
+        reference.add(pelanggan).addOnSuccessListener(new OnSuccessListener<DocumentReference>() {
+            @Override
+            public void onSuccess(DocumentReference documentReference) {
+                Toast.makeText(getApplicationContext(), "Daftar baru berhasil !", Toast.LENGTH_SHORT).show();
+                startActivity(new Intent(getApplicationContext(), HomeActivity.class));
+                finish();
+            }
+        });
     }
 }

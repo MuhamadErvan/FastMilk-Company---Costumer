@@ -4,8 +4,8 @@ public class Pelanggan extends User {
 
     public Pelanggan() {}
 
-    public Pelanggan(String email, String nama, String notelp, String alamat) {
-        super(email, nama, notelp, alamat);
+    public Pelanggan(String key, String email, String nama, String notelp, String alamat) {
+        super(key, email, nama, notelp, alamat);
     }
 
     @Override

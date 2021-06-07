@@ -93,7 +93,7 @@ public class SignInActivity extends AppCompatActivity {
         mAuth.signInWithEmailAndPassword(email, password).addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
             @Override
             public void onComplete(@NonNull Task<AuthResult> task) {
-//                Log.d(TAG, "SignIn:onComplete:" + task.isSuccessful());
+                Log.d(TAG, "SignIn:onComplete:" + task.isSuccessful());
 
                 if(task.isSuccessful()){
                     onAuthSuccess();
@@ -106,8 +106,8 @@ public class SignInActivity extends AppCompatActivity {
     }
 
     private void onAuthSuccess(){
-        loader.setVisibility(View.GONE);
-        Toast.makeText(getApplicationContext(), "Login Berhasil", Toast.LENGTH_LONG).show();
+        startActivity(new Intent(getApplicationContext(), HomeActivity.class));
+        finish();
     }
 
     private boolean validateForm(){

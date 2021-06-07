@@ -9,7 +9,8 @@ public class User {
 
     public User() {}
 
-    public User(String Email, String nama, String notelp, String alamat) {
+    public User(String key, String Email, String nama, String notelp, String alamat) {
+        this.key = key;
         this.email = Email;
         this.namaLengkap = nama;
         this.notelp = notelp;
