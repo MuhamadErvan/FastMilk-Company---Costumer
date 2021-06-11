@@ -19,6 +19,7 @@ import com.google.android.gms.tasks.Task;
 import com.google.android.material.snackbar.Snackbar;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
@@ -26,8 +27,7 @@ public class SignInActivity extends AppCompatActivity {
     private static final String TAG = "SignInActivity";
     private TextView btnForgotPassword;
     private FirebaseAuth mAuth;
-    private FirebaseDatabase database;
-    private DatabaseReference reference;
+    private FirebaseAuth.AuthStateListener listener;
     private String getUserID;
     private Button btnSignIn;
     private EditText txtEmail;
@@ -40,8 +40,6 @@ public class SignInActivity extends AppCompatActivity {
         setContentView(R.layout.activity_sign_in);
 
         mAuth = FirebaseAuth.getInstance();
-        database = FirebaseDatabase.getInstance();
-        reference = database.getReference();
         loader = findViewById(R.id.loader);
 
         txtEmail = findViewById(R.id.input_email);
@@ -55,6 +53,17 @@ public class SignInActivity extends AppCompatActivity {
                 finish();
             }
         });
+
+        listener = new FirebaseAuth.AuthStateListener() {
+            @Override
+            public void onAuthStateChanged(@NonNull FirebaseAuth firebaseAuth) {
+                FirebaseUser user = firebaseAuth.getCurrentUser();
+                if(user != null) {
+                    startActivity(new Intent(getApplicationContext(), HomeActivity.class));
+                    finish();
+                }
+            }
+        };
 
         btnSignIn = findViewById(R.id.btnLogin);
         btnSignIn.setOnClickListener(new View.OnClickListener() {
@@ -72,6 +81,20 @@ public class SignInActivity extends AppCompatActivity {
                 SignIn();
             }
         });
+    }
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+        mAuth.addAuthStateListener(listener);
+    }
+
+    @Override
+    protected void onStop() {
+        super.onStop();
+        if(listener != null) {
+            mAuth.removeAuthStateListener(listener);
+        }
     }
 
     @Override
@@ -96,10 +119,11 @@ public class SignInActivity extends AppCompatActivity {
                 Log.d(TAG, "SignIn:onComplete:" + task.isSuccessful());
 
                 if(task.isSuccessful()){
-                    onAuthSuccess();
+//                    onAuthSuccess();
+                    Toast.makeText(getApplicationContext(), "Login Berhasil", Toast.LENGTH_LONG).show();
                 } else {
                     loader.setVisibility(View.GONE);
-                    Toast.makeText(getApplicationContext(), "Login Gagal", Toast.LENGTH_LONG).show();
+                    Toast.makeText(getApplicationContext(), "Login Gagal, silahkan coba lagi", Toast.LENGTH_LONG).show();
                 }
             }
         });
