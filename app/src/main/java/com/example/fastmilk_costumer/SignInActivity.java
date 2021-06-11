@@ -54,17 +54,6 @@ public class SignInActivity extends AppCompatActivity {
             }
         });
 
-        listener = new FirebaseAuth.AuthStateListener() {
-            @Override
-            public void onAuthStateChanged(@NonNull FirebaseAuth firebaseAuth) {
-                FirebaseUser user = firebaseAuth.getCurrentUser();
-                if(user != null) {
-                    startActivity(new Intent(getApplicationContext(), HomeActivity.class));
-                    finish();
-                }
-            }
-        };
-
         btnSignIn = findViewById(R.id.btnLogin);
         btnSignIn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -81,20 +70,6 @@ public class SignInActivity extends AppCompatActivity {
                 SignIn();
             }
         });
-    }
-
-    @Override
-    protected void onStart() {
-        super.onStart();
-        mAuth.addAuthStateListener(listener);
-    }
-
-    @Override
-    protected void onStop() {
-        super.onStop();
-        if(listener != null) {
-            mAuth.removeAuthStateListener(listener);
-        }
     }
 
     @Override
@@ -119,7 +94,7 @@ public class SignInActivity extends AppCompatActivity {
                 Log.d(TAG, "SignIn:onComplete:" + task.isSuccessful());
 
                 if(task.isSuccessful()){
-//                    onAuthSuccess();
+                    onAuthSuccess();
                     Toast.makeText(getApplicationContext(), "Login Berhasil", Toast.LENGTH_LONG).show();
                 } else {
                     loader.setVisibility(View.GONE);
