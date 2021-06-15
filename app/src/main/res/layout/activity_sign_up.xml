@@ -7,15 +7,15 @@
 
     <ImageView
         android:id="@+id/icon_logo_sign_up"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="146dp"
+        android:layout_height="110dp"
         android:src="@drawable/ic_frame"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.042" />
+        app:layout_constraintVertical_bias="0.054" />
 
     <TextView
         android:id="@+id/sub_title_1"
@@ -35,7 +35,6 @@
         android:id="@+id/sub_title_2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="-5dp"
         android:fontFamily="@font/nunitolight"
         android:gravity="center"
         android:text="Silahkan masuk untuk berbelanja"
@@ -45,7 +44,7 @@
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/sub_title_1"
-        app:layout_constraintVertical_bias="0.009" />
+        app:layout_constraintVertical_bias="0.0" />
 
     <TextView
         android:id="@+id/input_title_email"
@@ -63,7 +62,6 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginLeft="20dp"
-        android:layout_marginTop="3dp"
         android:layout_marginRight="21dp"
         android:inputType="textEmailAddress"
         android:backgroundTint="@color/colorPrimary"
@@ -89,7 +87,6 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginLeft="20dp"
-        android:layout_marginTop="3dp"
         android:layout_marginRight="21dp"
         android:inputType="text"
         android:backgroundTint="@color/colorPrimary"
@@ -115,7 +112,6 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginLeft="20dp"
-        android:layout_marginTop="3dp"
         android:inputType="number"
         android:layout_marginRight="21dp"
         android:backgroundTint="@color/colorPrimary"
@@ -141,7 +137,6 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginLeft="20dp"
-        android:layout_marginTop="3dp"
         android:layout_marginRight="21dp"
         android:backgroundTint="@color/colorPrimary"
         android:fontFamily="@font/nunitoregular"
@@ -166,7 +161,6 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginLeft="20dp"
-        android:layout_marginTop="3dp"
         android:inputType="textPassword"
         android:layout_marginRight="21dp"
         android:backgroundTint="@color/colorPrimary"
@@ -192,8 +186,8 @@
         app:layout_constraintHorizontal_bias="0.495"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.926" />
+        app:layout_constraintTop_toBottomOf="@+id/input_password"
+        app:layout_constraintVertical_bias="0.109" />
 
     <ProgressBar
         android:id="@+id/loader"
