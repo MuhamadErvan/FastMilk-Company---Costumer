@@ -64,14 +64,198 @@
             android:id="@+id/text_email"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
             android:text="Email"
-            app:layout_constraintTop_toBottomOf="@+id/border1"
-            android:textSize="25sp"
             android:textColor="@color/black"
+            android:textSize="25sp"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginLeft="20dp"
+            app:layout_constraintTop_toBottomOf="@+id/border1"
+            />
 
-            >
+        <TextView
+            android:id="@+id/titik2_1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="80dp"
+            android:layout_marginEnd="224dp"
+            android:text=":"
+            android:textColor="@color/black"
+            android:textSize="20sp"
+            app:layout_constraintLeft_toRightOf="@+id/text_email"
+            app:layout_constraintTop_toBottomOf="@+id/border1"
+            android:layout_marginTop="20dp"
+             />
 
-        </TextView>
+        <TextView
+            android:id="@+id/text_email2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:text="user@mail.id"
+            android:textColor="@color/AbuAbu"
+            android:textSize="25sp"
+            android:layout_marginLeft="30dp"
+            app:layout_constraintLeft_toRightOf="@+id/titik2_1"
+            app:layout_constraintTop_toBottomOf="@+id/border1"
+            />
+        <View
+            android:id="@+id/border2"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/stroke"
+            android:layout_marginTop="20dp"
+            app:layout_constraintTop_toBottomOf="@+id/text_email"
+             />
+
+        <TextView
+            android:id="@+id/text_nama"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:text="Nama"
+            android:textColor="@color/black"
+            android:textSize="25sp"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginLeft="20dp"
+            app:layout_constraintTop_toBottomOf="@+id/border2"
+            />
+
+        <TextView
+            android:id="@+id/titik2_2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="75dp"
+            android:layout_marginEnd="224dp"
+            android:text=":"
+            android:textColor="@color/black"
+            android:textSize="20sp"
+            app:layout_constraintLeft_toRightOf="@+id/text_nama"
+            app:layout_constraintTop_toBottomOf="@+id/border2"
+            android:layout_marginTop="20dp"
+            />
+
+        <TextView
+            android:id="@+id/text_nama2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:text="username"
+            android:textColor="@color/AbuAbu"
+            android:textSize="25sp"
+            android:layout_marginLeft="30dp"
+            app:layout_constraintLeft_toRightOf="@+id/titik2_2"
+            app:layout_constraintTop_toBottomOf="@+id/border2"
+            />
+
+        <View
+            android:id="@+id/border3"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/stroke"
+            android:layout_marginTop="20dp"
+            app:layout_constraintTop_toBottomOf="@+id/text_nama"
+            />
+
+        <TextView
+            android:id="@+id/text_alamat"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:text="Alamat"
+            android:textColor="@color/black"
+            android:textSize="25sp"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginLeft="20dp"
+            app:layout_constraintTop_toBottomOf="@+id/border3"
+            />
+
+        <TextView
+            android:id="@+id/titik2_3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="60dp"
+            android:layout_marginEnd="224dp"
+            android:text=":"
+            android:textColor="@color/black"
+            android:textSize="20sp"
+            app:layout_constraintLeft_toRightOf="@+id/text_alamat"
+            app:layout_constraintTop_toBottomOf="@+id/border3"
+            android:layout_marginTop="20dp"
+            />
+
+        <TextView
+            android:id="@+id/text_alamat2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:text="Jl.Cibangkong"
+            android:textColor="@color/AbuAbu"
+            android:textSize="25sp"
+            android:layout_marginLeft="30dp"
+            app:layout_constraintLeft_toRightOf="@+id/titik2_3"
+            app:layout_constraintTop_toBottomOf="@+id/border3"
+            />
+
+        <View
+            android:id="@+id/border4"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/stroke"
+            android:layout_marginTop="20dp"
+            app:layout_constraintTop_toBottomOf="@+id/text_alamat"
+            />
+
+        <TextView
+            android:id="@+id/text_telp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:text="No.Telp"
+            android:textColor="@color/black"
+            android:textSize="25sp"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginLeft="20dp"
+            app:layout_constraintTop_toBottomOf="@+id/border4"
+            />
+
+        <TextView
+            android:id="@+id/titik2_4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="55dp"
+            android:layout_marginEnd="224dp"
+            android:text=":"
+            android:textColor="@color/black"
+            android:textSize="20sp"
+            app:layout_constraintLeft_toRightOf="@+id/text_telp"
+            app:layout_constraintTop_toBottomOf="@+id/border4"
+            android:layout_marginTop="20dp"
+            />
+
+        <TextView
+            android:id="@+id/text_telp2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:text="085543221178"
+            android:textColor="@color/AbuAbu"
+            android:textSize="25sp"
+            android:layout_marginLeft="30dp"
+            app:layout_constraintLeft_toRightOf="@+id/titik2_4"
+            app:layout_constraintTop_toBottomOf="@+id/border4"
+            />
+
+        <View
+            android:id="@+id/border5"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/stroke"
+            android:layout_marginTop="20dp"
+            app:layout_constraintTop_toBottomOf="@+id/text_telp"
+            />
+
+
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
