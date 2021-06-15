@@ -13,7 +13,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.Light.NoActionBar">
         <activity android:name=".DetailAccountActivity"></activity>
+        <activity android:name=".AboutUsActivity" />
         <activity android:name=".SignUpActivity" />
+        <activity android:name=".NotificationActivity" />
         <activity android:name=".HomeActivity" />
         <activity android:name=".SignInActivity" />
         <activity android:name=".ForgotPasswordSuccessActivity" />
