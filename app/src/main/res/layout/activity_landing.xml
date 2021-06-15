@@ -26,40 +26,47 @@
         android:id="@+id/text1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:paddingTop="120dp"
         android:fontFamily="@font/nunitobold"
+        android:paddingTop="120dp"
         android:text="SELAMAT DATANG"
         android:textColor="@color/colorPrimary"
         android:textSize="22sp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/logo2" />
+        app:layout_constraintTop_toBottomOf="@+id/logo2"
+        app:layout_constraintVertical_bias="0.0" />
 
     <TextView
         android:id="@+id/text2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:paddingTop="10dp"
         android:fontFamily="@font/nunitoregular"
+        android:paddingTop="10dp"
         android:text="Nikmati kegiatan anda dengan produk-produk"
         android:textColor="#C4C4C4"
         android:textSize="14dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHorizontal_bias="0.495"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/text1" />
+        app:layout_constraintTop_toBottomOf="@+id/text1"
+        app:layout_constraintVertical_bias="0.0" />
 
     <TextView
         android:id="@+id/text3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:paddingTop="2dp"
         android:fontFamily="@font/nunitoregular"
+        android:paddingTop="2dp"
         android:text="unggulan dari kami"
         android:textColor="#C4C4C4"
         android:textSize="14dp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/text2" />
+        app:layout_constraintTop_toBottomOf="@+id/text2"
+        app:layout_constraintVertical_bias="0.0" />
 
     <Button
         android:id="@+id/button1"
@@ -69,9 +76,12 @@
         android:background="@drawable/rounded_button"
         android:text="MASUK"
         android:textColor="#FFFF"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHorizontal_bias="0.503"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/text3" />
+        app:layout_constraintTop_toBottomOf="@+id/text3"
+        app:layout_constraintVertical_bias="0.0" />
 
     <Button
         android:id="@+id/button2"
@@ -81,8 +91,11 @@
         android:background="@drawable/border"
         android:text="DAFTAR"
         android:textColor="@color/colorPrimary"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHorizontal_bias="0.503"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button1" />
+        app:layout_constraintTop_toBottomOf="@+id/button1"
+        app:layout_constraintVertical_bias="0.0" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
