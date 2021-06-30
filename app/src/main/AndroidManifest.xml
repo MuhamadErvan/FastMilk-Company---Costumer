@@ -12,7 +12,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.Light.NoActionBar">
-        <activity android:name=".DetailAccountActivity"></activity>
+        <activity android:name=".KategoriActivity"></activity>
+        <activity android:name=".DetailAccountActivity" />
         <activity android:name=".AboutUsActivity" />
         <activity android:name=".SignUpActivity" />
         <activity android:name=".NotificationActivity" />
